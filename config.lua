@@ -22,6 +22,8 @@ vim.opt.sidescrolloff = 8
 lvim.keys.normal_mode["<S-h>"] = ":bprev<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":bnext<cr>"
 
+
+
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
 -- add your own keymapping
@@ -219,6 +221,9 @@ lvim.plugins = {
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+--
+
+
 
 require("catppuccin").setup({
   flavour = "mocha",   -- latte, frappe, macchiato, mocha
@@ -263,4 +268,7 @@ require("catppuccin").setup({
     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
 })
+
+
+vim.cmd('set guicursor+=n:hor20-Cursor/lCursor')
 
