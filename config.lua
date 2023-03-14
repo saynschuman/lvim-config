@@ -72,7 +72,6 @@ lvim.builtin.which_key.mappings["t"] = {
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
-lvim.builtin.terminal.direction = "horizontal"
 lvim.builtin.terminal.size = 10
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.view.hide_root_folder = true
@@ -265,3 +264,11 @@ require("catppuccin").setup({
   },
 })
 
+local vim = vim
+
+vim.api.nvim_exec([[
+  augroup OpenNeoTreeGroup
+    autocmd!
+    autocmd BufWinEnter * lua if vim.fn.expand('%:e') ~= '' then vim.cmd('NvimTreeToggle') end
+  augroup END
+]], false)
