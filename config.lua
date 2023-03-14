@@ -180,6 +180,7 @@ formatters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
+  {"terryma/vim-multiple-cursors"},
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
