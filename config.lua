@@ -14,7 +14,7 @@ lvim.format_on_save.enabled = false
 lvim.colorscheme = "catppuccin"
 lvim.transparent_window = true
 vim.opt.cursorline = false    -- highlight the current line
-vim.opt.relativenumber = true -- set relative numbered lines
+vim.opt.relativenumber = false -- set relative numbered lines
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -264,11 +264,3 @@ require("catppuccin").setup({
   },
 })
 
-local vim = vim
-
-vim.api.nvim_exec([[
-  augroup OpenNeoTreeGroup
-    autocmd!
-    autocmd BufWinEnter * lua if vim.fn.expand('%:e') ~= '' then vim.cmd('NvimTreeToggle') end
-  augroup END
-]], false)
