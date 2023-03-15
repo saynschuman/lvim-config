@@ -14,5 +14,9 @@ return {
       }
     },
     config = require("vitaliy.neo-tree")
- }
+ },
+ { 
+    "catppuccin/nvim",
+    name = "catppuccin" 
+ },
 }
