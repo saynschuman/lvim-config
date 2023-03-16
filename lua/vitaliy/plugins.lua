@@ -12,5 +12,12 @@ return {
       }
     },
     config = require("vitaliy.neo-tree")
-  }, {"catppuccin/nvim", name = "catppuccin"}
+  }, {"catppuccin/nvim", name = "catppuccin"}, {
+    "tpope/vim-fugitive",
+    cmd = {
+      "G", "Git", "Gdiffsplit", "Gread", "Gwrite", "Ggrep", "GMove", "GDelete",
+      "GBrowse", "GRemove", "GRename", "Glgrep", "Gedit"
+    },
+    ft = {"fugitive"}
+  }
 }
