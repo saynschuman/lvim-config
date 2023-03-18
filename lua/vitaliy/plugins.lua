@@ -19,9 +19,5 @@ return {
       "GBrowse", "GRemove", "GRename", "Glgrep", "Gedit"
     },
     ft = {"fugitive"}
-  },
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
+  }, {"folke/trouble.nvim", cmd = "TroubleToggle"}, {"szw/vim-maximizer"}
 }
