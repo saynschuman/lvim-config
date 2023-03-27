@@ -19,8 +19,7 @@ return {
       "GBrowse", "GRemove", "GRename", "Glgrep", "Gedit"
     },
     ft = {"fugitive"}
-  }, {"folke/trouble.nvim", cmd = "TroubleToggle"}, {"szw/vim-maximizer"},
-  {"aquach/vim-http-client"}, {
+  }, {"folke/trouble.nvim", cmd = "TroubleToggle"}, {"szw/vim-maximizer"}, {
     "rest-nvim/rest.nvim",
     requires = {"nvim-lua/plenary.nvim"},
     config = function()
@@ -42,12 +41,7 @@ return {
           show_headers = true,
           -- executables or functions for formatting response body [optional]
           -- set them to false if you want to disable them
-          formatters = {
-            json = "jq ."
-            -- html = function(body)
-            --   return vim.fn.system({"tidy", "-i", "-q", "-"}, body)
-            -- end
-          }
+          formatters = {json = "jq ."}
         },
         -- Jump to request line on run
         jump_to_request = false,
