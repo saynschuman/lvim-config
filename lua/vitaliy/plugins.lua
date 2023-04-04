@@ -23,5 +23,5 @@ return {
     "rest-nvim/rest.nvim",
     requires = "nvim-lua/plenary.nvim", -- just use one name for the require
     config = require("vitaliy.rest-nvim")
-  }
+  }, {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
 }
