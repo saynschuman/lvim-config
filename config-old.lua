@@ -5,15 +5,13 @@ Linters should be
 filled in as strings with either
 a global executable or a path to
 an executable
-]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
-
+]] -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
 -- lvim.colorscheme = "catppuccin"
 lvim.transparent_window = true
-vim.opt.cursorline = false    -- highlight the current line
+vim.opt.cursorline = false -- highlight the current line
 vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
@@ -22,8 +20,6 @@ vim.opt.sidescrolloff = 8
 -- lvim.keys.normal_mode["<S-h>"] = ":bprev<cr>"
 -- lvim.keys.normal_mode["<S-l>"] = ":bnext<cr>"
 lvim.keys.normal_mode["<C-g>"] = ":Neotree float git_status<cr>"
-
-
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -60,15 +56,17 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.builtin.theme.options.style = "storm"
 
 -- Use which-key to add extra bindings with the leader-key prefix
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["P"] = {
+  "<cmd>Telescope projects<CR>", "Projects"
+}
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+  r = {"<cmd>Trouble lsp_references<cr>", "References"},
+  f = {"<cmd>Trouble lsp_definitions<cr>", "Definitions"},
+  d = {"<cmd>Trouble document_diagnostics<cr>", "Diagnostics"},
+  q = {"<cmd>Trouble quickfix<cr>", "QuickFix"},
+  l = {"<cmd>Trouble loclist<cr>", "LocationList"},
+  w = {"<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics"}
 }
 
 -- TODO: User Config for predefined plugins
@@ -77,29 +75,19 @@ lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.terminal.size = 10
-lvim.builtin.nvimtree.active = false 
+lvim.builtin.nvimtree.active = false
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.view.hide_root_folder = false 
+lvim.builtin.nvimtree.setup.view.hide_root_folder = false
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
 -- lvim.builtin.nvimtree.setup.view.width = 40
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+  "bash", "c", "javascript", "json", "lua", "python", "typescript", "tsx",
+  "css", "rust", "java", "yaml"
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ignore_install = {"haskell"}
 lvim.builtin.treesitter.highlight.enable = true
 
 -- generic LSP settings
@@ -181,43 +169,20 @@ lvim.lsp.diagnostics.virtual_text = false
 -- Additional Plugins
 lvim.plugins = {
   {"terryma/vim-multiple-cursors"},
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
-  {
+  {"folke/trouble.nvim", cmd = "TroubleToggle"}, {
     "tpope/vim-fugitive",
     cmd = {
-      "G",
-      "Git",
-      "Gdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "GMove",
-      "GDelete",
-      "GBrowse",
-      "GRemove",
-      "GRename",
-      "Glgrep",
-      "Gedit"
+      "G", "Git", "Gdiffsplit", "Gread", "Gwrite", "Ggrep", "GMove", "GDelete",
+      "GBrowse", "GRemove", "GRename", "Glgrep", "Gedit"
     },
-    ft = { "fugitive" }
-  },
-  {
-    "sindrets/diffview.nvim",
-    event = "BufRead",
-  },
-  { "easymotion/vim-easymotion" },
-  { "catppuccin/nvim",          name = "catppuccin" },
- {
-  "nvim-neo-tree/neo-tree.nvim",
+    ft = {"fugitive"}
+  }, {"sindrets/diffview.nvim", event = "BufRead"},
+  {"easymotion/vim-easymotion"}, {"catppuccin/nvim", name = "catppuccin"}, {
+    "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
-    requires = { 
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-      {
+    requires = {
+      "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim", {
         -- only needed if you want to use the commands with "_with_window_picker" suffix
         's1n7ax/nvim-window-picker',
         tag = "v1.*",
@@ -229,30 +194,30 @@ lvim.plugins = {
               -- filter using buffer options
               bo = {
                 -- if the file type is one of following, the window will be ignored
-                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+                filetype = {'neo-tree', "neo-tree-popup", "notify"},
 
                 -- if the buffer type is one of following, the window will be ignored
-                buftype = { 'terminal', "quickfix" },
-              },
+                buftype = {'terminal', "quickfix"}
+              }
             },
-            other_win_hl_color = '#e35e4f',
+            other_win_hl_color = '#e35e4f'
           })
-        end,
+        end
       }
     },
-    config = function ()
+    config = function()
       -- Unless you are still migrating, remove the deprecated commands from v1.x
       vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
       -- If you want icons for diagnostic errors, you'll need to define them somewhere:
       vim.fn.sign_define("DiagnosticSignError",
-        {text = " ", texthl = "DiagnosticSignError"})
+                         {text = " ", texthl = "DiagnosticSignError"})
       vim.fn.sign_define("DiagnosticSignWarn",
-        {text = " ", texthl = "DiagnosticSignWarn"})
+                         {text = " ", texthl = "DiagnosticSignWarn"})
       vim.fn.sign_define("DiagnosticSignInfo",
-        {text = " ", texthl = "DiagnosticSignInfo"})
+                         {text = " ", texthl = "DiagnosticSignInfo"})
       vim.fn.sign_define("DiagnosticSignHint",
-        {text = "", texthl = "DiagnosticSignHint"})
+                         {text = "", texthl = "DiagnosticSignHint"})
       -- NOTE: this is changed from v1.x, which used the old style of highlight groups
       -- in the form "LspDiagnosticsSignWarning"
 
@@ -261,9 +226,9 @@ lvim.plugins = {
         popup_border_style = "rounded",
         enable_git_status = true,
         enable_diagnostics = true,
-        open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
+        open_files_do_not_replace_types = {"terminal", "trouble", "qf"}, -- when opening files, do not use windows containing these filetypes or buftypes
         sort_case_insensitive = false, -- used when sorting files and directories in the tree
-        sort_function = nil , -- use a custom function for sorting files and directories in the tree 
+        sort_function = nil, -- use a custom function for sorting files and directories in the tree 
         -- sort_function = function (a,b)
         --       if a.type == b.type then
         --           return a.path > b.path
@@ -272,9 +237,7 @@ lvim.plugins = {
         --       end
         --   end , -- this sorts files and directories descendantly
         default_component_configs = {
-          container = {
-            enable_character_fade = true
-          },
+          container = {enable_character_fade = true},
           indent = {
             indent_size = 2,
             padding = 1, -- extra padding on left hand side
@@ -287,7 +250,7 @@ lvim.plugins = {
             with_expanders = nil, -- if nil and file nesting is enabled, will enable expanders
             expander_collapsed = "",
             expander_expanded = "",
-            expander_highlight = "NeoTreeExpander",
+            expander_highlight = "NeoTreeExpander"
           },
           icon = {
             folder_closed = "",
@@ -298,47 +261,41 @@ lvim.plugins = {
             default = "*",
             highlight = "NeoTreeFileIcon"
           },
-          modified = {
-            symbol = "[+]",
-            highlight = "NeoTreeModified",
-          },
+          modified = {symbol = "[+]", highlight = "NeoTreeModified"},
           name = {
             trailing_slash = false,
             use_git_status_colors = true,
-            highlight = "NeoTreeFileName",
+            highlight = "NeoTreeFileName"
           },
           git_status = {
             symbols = {
               -- Change type
-              added     = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
-              modified  = "", -- or "", but this is redundant info if you use git_status_colors on the name
-              deleted   = "✖",-- this can only be used in the git_status source
-              renamed   = "",-- this can only be used in the git_status source
+              added = "✚", -- or "✚", but this is redundant info if you use git_status_colors on the name
+              modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
+              deleted = "✖", -- this can only be used in the git_status source
+              renamed = "", -- this can only be used in the git_status source
               -- Status type
               untracked = "",
               ignored = "◌",
               unstaged = "✗",
               staged = "✓",
-              conflict  = "",
+              conflict = ""
             }
-          },
+          }
         },
         window = {
           position = "left",
           width = 40,
-          mapping_options = {
-            noremap = true,
-            nowait = true,
-          },
+          mapping_options = {noremap = true, nowait = true},
           mappings = {
-            ["<space>"] = { 
-                "toggle_node", 
-                nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use 
+            ["<space>"] = {
+              "toggle_node",
+              nowait = false -- disable `nowait` if you have existing combos starting with this char that you want to use 
             },
             ["<2-LeftMouse>"] = "open",
             ["<cr>"] = "open",
             ["<esc>"] = "revert_preview",
-            ["P"] = { "toggle_preview", config = { use_float = true } },
+            ["P"] = {"toggle_preview", config = {use_float = true}},
             ["l"] = "focus_preview",
             ["S"] = "open_split",
             ["s"] = "open_vsplit",
@@ -348,12 +305,12 @@ lvim.plugins = {
             -- ["<cr>"] = "open_drop",
             -- ["t"] = "open_tab_drop",
             ["w"] = "open_with_window_picker",
-            --["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
+            -- ["P"] = "toggle_preview", -- enter preview mode, which shows the current node without focusing
             ["C"] = "close_node",
             -- ['C'] = 'close_all_subnodes',
             ["z"] = "close_all_nodes",
-            --["Z"] = "expand_all_nodes",
-            ["a"] = { 
+            -- ["Z"] = "expand_all_nodes",
+            ["a"] = {
               "add",
               -- this command supports BASH style brace expansion ("x{a,b,c}" -> xa,xb,xc). see `:h neo-tree-file-actions` for details
               -- some commands may take optional config options, see `:h neo-tree-mappings` for details
@@ -373,13 +330,13 @@ lvim.plugins = {
             --  config = {
             --    show_path = "none" -- "none", "relative", "absolute"
             --  }
-            --}
+            -- }
             ["m"] = "move", -- takes text input for destination, also accepts the optional config.show_path option like "add".
             ["<C-c>"] = "close_window",
             ["R"] = "refresh",
             ["?"] = "show_help",
             ["<"] = "prev_source",
-            [">"] = "next_source",
+            [">"] = "next_source"
           }
         },
         nesting_rules = {},
@@ -390,33 +347,33 @@ lvim.plugins = {
             hide_gitignored = true,
             hide_hidden = true, -- only works on Windows for hidden files/directories
             hide_by_name = {
-              --"node_modules"
+              -- "node_modules"
             },
             hide_by_pattern = { -- uses glob style patterns
-              --"*.meta",
-              --"*/src/*/tsconfig.json",
+              -- "*.meta",
+              -- "*/src/*/tsconfig.json",
             },
             always_show = { -- remains visible even if other settings would normally hide it
-              --".gitignored",
+              -- ".gitignored",
             },
             never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
-              --".DS_Store",
-              --"thumbs.db"
+              -- ".DS_Store",
+              -- "thumbs.db"
             },
             never_show_by_pattern = { -- uses glob style patterns
-              --".null-ls_*",
-            },
+              -- ".null-ls_*",
+            }
           },
           follow_current_file = true, -- This will find and focus the file in the active buffer every
-                                       -- time the current file is changed while the tree is open.
+          -- time the current file is changed while the tree is open.
           group_empty_dirs = false, -- when true, empty folders will be grouped together
           hijack_netrw_behavior = "open_default", -- netrw disabled, opening a directory opens neo-tree
-                                                  -- in whatever position is specified in window.position
-                                -- "open_current",  -- netrw disabled, opening a directory opens within the
-                                                  -- window like netrw would, regardless of window.position
-                                -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
+          -- in whatever position is specified in window.position
+          -- "open_current",  -- netrw disabled, opening a directory opens within the
+          -- window like netrw would, regardless of window.position
+          -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
           use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
-                                          -- instead of relying on nvim autocmd events.
+          -- instead of relying on nvim autocmd events.
           window = {
             mappings = {
               ["<bs>"] = "navigate_up",
@@ -429,34 +386,34 @@ lvim.plugins = {
               ["f"] = "filter_on_submit",
               ["<c-x>"] = "clear_filter",
               ["[g"] = "prev_git_modified",
-              ["]g"] = "next_git_modified",
+              ["]g"] = "next_git_modified"
             }
           }
         },
         buffers = {
           follow_current_file = true, -- This will find and focus the file in the active buffer every
-                                       -- time the current file is changed while the tree is open.
+          -- time the current file is changed while the tree is open.
           group_empty_dirs = true, -- when true, empty folders will be grouped together
           show_unloaded = true,
           window = {
             mappings = {
               ["bd"] = "buffer_delete",
               ["<bs>"] = "navigate_up",
-              ["."] = "set_root",
+              ["."] = "set_root"
             }
-          },
+          }
         },
         git_status = {
           window = {
             position = "float",
             mappings = {
-              ["A"]  = "git_add_all",
+              ["A"] = "git_add_all",
               ["gu"] = "git_unstage_file",
               ["ga"] = "git_add_file",
               ["gr"] = "git_revert_file",
               ["gc"] = "git_commit",
               ["gp"] = "git_push",
-              ["gg"] = "git_commit_and_push",
+              ["gg"] = "git_commit_and_push"
             }
           }
         }
@@ -464,7 +421,7 @@ lvim.plugins = {
 
       vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
     end
-}
+  }
 }
 
 vim.cmd("autocmd VimEnter * Neotree")
@@ -483,28 +440,22 @@ vim.cmd("autocmd VimEnter * Neotree")
 -- })
 --
 
-
-
 require("catppuccin").setup({
-  flavour = "mocha",   -- latte, frappe, macchiato, mocha
+  flavour = "mocha", -- latte, frappe, macchiato, mocha
   background = {
-                       -- :h background
+    -- :h background
     light = "latte",
-    dark = "mocha",
+    dark = "mocha"
   },
   transparent_background = true,
-  show_end_of_buffer = false,   -- show the '~' characters after the end of buffers
+  show_end_of_buffer = false, -- show the '~' characters after the end of buffers
   term_colors = true,
-  dim_inactive = {
-    enabled = false,
-    shade = "dark",
-    percentage = 0.15,
-  },
-  no_italic = false,   -- Force no italic
-  no_bold = false,     -- Force no bold
+  dim_inactive = {enabled = false, shade = "dark", percentage = 0.15},
+  no_italic = false, -- Force no italic
+  no_bold = false, -- Force no bold
   styles = {
-    comments = { "italic" },
-    conditionals = { "italic" },
+    comments = {"italic"},
+    conditionals = {"italic"},
     loops = {},
     functions = {},
     keywords = {},
@@ -514,7 +465,7 @@ require("catppuccin").setup({
     booleans = {},
     properties = {},
     types = {},
-    operators = {},
+    operators = {}
   },
   color_overrides = {},
   custom_highlights = {},
@@ -524,11 +475,9 @@ require("catppuccin").setup({
     nvimtree = true,
     telescope = true,
     notify = false,
-    mini = false,
+    mini = false
     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
-  },
+  }
 })
 
-
 vim.cmd('set guicursor+=n:hor20-Cursor/lCursor')
-
