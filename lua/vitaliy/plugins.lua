@@ -23,5 +23,9 @@ return {
     "rest-nvim/rest.nvim",
     requires = "nvim-lua/plenary.nvim", -- just use one name for the require
     config = require("vitaliy.rest-nvim")
-  }, {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
+  }, {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}, {
+    "iamcco/markdown-preview.nvim",
+    ft = {"markdown"},
+    run = "cd app && yarn install"
+  }
 }
