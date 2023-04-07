@@ -19,11 +19,8 @@ return {
       "GBrowse", "GRemove", "GRename", "Glgrep", "Gedit"
     },
     ft = {"fugitive"}
-  }, {"folke/trouble.nvim", cmd = "TroubleToggle"}, {"szw/vim-maximizer"}, {
-    "rest-nvim/rest.nvim",
-    requires = "nvim-lua/plenary.nvim", -- just use one name for the require
-    config = require("vitaliy.rest-nvim")
-  }, {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}, {
+  }, {"folke/trouble.nvim", cmd = "TroubleToggle"}, {"szw/vim-maximizer"},
+  {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}, {
     "iamcco/markdown-preview.nvim",
     ft = {"markdown"},
     run = "cd app && yarn install"
