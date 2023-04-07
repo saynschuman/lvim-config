@@ -2,19 +2,25 @@ local M = {}
 
 local function parse_http_file()
   local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
-  local url, headers = nil, {}
+  local method, url, headers, data = nil, nil, {}, {}
+  local is_body = false
 
   for _, line in ipairs(lines) do
-    if not url then
-      local method, request_url = string.match(line, "^(%u+)%s+(.+)$")
-      if method and request_url then url = request_url end
-    else
+    if not method and not url then
+      method, url = string.match(line, "^(%u+)%s+(.+)$")
+    elseif not is_body then
       local key, value = string.match(line, "^(.-):%s*(.+)$")
-      if key and value then headers[key] = value end
+      if key and value then
+        headers[key] = value
+      elseif line == "" then
+        is_body = true
+      end
+    else
+      table.insert(data, line)
     end
   end
 
-  return url, headers
+  return method, url, headers, table.concat(data, "\n")
 end
 
 local function pretty_json(json_str)
@@ -46,7 +52,7 @@ local function pretty_json(json_str)
   return formatted_json
 end
 
-local function get_request(url, headers)
+local function get_request(method, url, headers, data)
   local header_cmd = ""
 
   if headers ~= nil then
@@ -55,7 +61,13 @@ local function get_request(url, headers)
     end
   end
 
-  local cmd = "curl -s " .. header_cmd .. "-o - " .. url
+  local data_cmd = ""
+  if data ~= nil and data ~= "" then
+    data_cmd = "-d '" .. data:gsub("'", "\\'") .. "' "
+  end
+
+  local cmd = "curl -s -X " .. method .. " " .. header_cmd .. data_cmd ..
+                  "-o - " .. url
   local handle = io.popen(cmd)
 
   if handle == nil then
@@ -65,11 +77,6 @@ local function get_request(url, headers)
 
   local response = handle:read("*a")
   handle:close()
-
-  if response == nil then
-    print("Error: Unable to read response from server")
-    return nil
-  end
 
   -- Форматируем JSON-ответ
   local pretty_response = pretty_json(response)
@@ -83,9 +90,9 @@ local function get_request(url, headers)
 end
 
 M.exec = function()
-  local url, headers = parse_http_file()
-  if url then
-    get_request(url, headers)
+  local method, url, headers, data = parse_http_file()
+  if method and url then
+    get_request(method, url, headers, data)
   else
     print("Error: Unable to parse the current file")
   end
