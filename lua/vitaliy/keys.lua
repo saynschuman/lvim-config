@@ -5,4 +5,5 @@ lvim.keys.normal_mode["<leader>ga"] = ":DiffviewFileHistory<cr>"
 lvim.keys.normal_mode["<leader>gf"] = ":DiffviewFileHistory %<cr>"
 lvim.keys.normal_mode["<leader>gq"] = ":DiffviewClose<cr>"
 lvim.keys.normal_mode["<leader>m"] = ":MarkdownPreview<cr>"
+lvim.keys.normal_mode["<C-[>"] = ":CocList diagnostics<CR>"
 
