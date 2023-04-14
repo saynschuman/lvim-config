@@ -19,8 +19,8 @@ lvim.keys.normal_mode["<C-d>"] = "<Cmd>lua Scroll('<C-d>', 1, 1)<CR>"
 lvim.keys.visual_mode["<C-d>"] = "<Cmd>lua Scroll('<C-d>', 1, 1)<CR>"
 
 -- Page movements:
-lvim.keys.normal_mode["<C-b>"] = "<Cmd>lua Scroll('<C-b>', 1, 1)<CR>"
-lvim.keys.visual_mode["<C-b>"] = "<Cmd>lua Scroll('<C-b>', 1, 1)<CR>"
+-- lvim.keys.normal_mode["<C-b>"] = "<Cmd>lua Scroll('<C-b>', 1, 1)<CR>"
+-- lvim.keys.visual_mode["<C-b>"] = "<Cmd>lua Scroll('<C-b>', 1, 1)<CR>"
 lvim.keys.normal_mode["<C-f>"] = "<Cmd>lua Scroll('<C-f>', 1, 1)<CR>"
 lvim.keys.visual_mode["<C-f>"] = "<Cmd>lua Scroll('<C-f>', 1, 1)<CR>"
 lvim.keys.normal_mode["<PageUp>"] = "<Cmd>lua Scroll('<C-b>', 1, 1)<CR>"
