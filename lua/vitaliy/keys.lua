@@ -53,7 +53,7 @@ lvim.keys.visual_mode["}"] = "<Cmd>lua Scroll('}')<CR>"
 -- Previous/next search result:
 lvim.keys.normal_mode["n"] = "<Cmd>lua Scroll('n', 1)<CR>"
 lvim.keys.normal_mode["N"] = "<Cmd>lua Scroll('N', 1)<CR>"
-lvim.keys.normal_mode["*"] = "<Cmd>lua Scroll('', 1)<CR>"
+lvim.keys.normal_mode["*"] = "<Cmd>lua Scroll('*', 1)<CR>"
 lvim.keys.normal_mode["#"] = "<Cmd>lua Scroll('#', 1)<CR>"
 lvim.keys.normal_mode["g"] = "<Cmd>lua Scroll('g*', 1)<CR>"
 lvim.keys.normal_mode["g#"] = "<Cmd>lua Scroll('g#', 1)<CR>"
