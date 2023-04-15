@@ -122,3 +122,6 @@ lvim.keys.normal_mode["gd"] = "<Cmd>lua Scroll('definition')<CR>"
 
 -- LSP go-to-declaration:
 lvim.keys.normal_mode["gD"] = "<Cmd>lua Scroll('declaration')<CR>"
+
+-- Настройка ремапа в режиме визуального выбора
+lvim.keys.visual_mode["<leader>p"] = "\"_dP"
