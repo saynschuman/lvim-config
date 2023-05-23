@@ -3,7 +3,7 @@ local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
     command = "prettier",
-    filetypes = {"typescript", "typescriptreact"}
+    filetypes = {"typescript", "typescriptreact", "sass", "javascript", "vue"}
   }, {
     command = "lua-format",
     filetypes = {"lua"},
