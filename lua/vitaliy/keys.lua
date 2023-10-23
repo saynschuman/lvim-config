@@ -125,3 +125,6 @@ lvim.keys.normal_mode["gD"] = "<Cmd>lua Scroll('declaration')<CR>"
 
 -- Настройка ремапа в режиме визуального выбора
 lvim.keys.visual_mode["<leader>p"] = "\"_dP"
+
+
+vim.api.nvim_set_keymap("i", "<C-s>", "copilot#Accept('<CR>')", { silent = true, expr = true, script = true })
