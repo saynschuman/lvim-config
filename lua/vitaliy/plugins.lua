@@ -37,8 +37,8 @@ return {
       require('cinnamon').setup({
         extra_keymaps = true,
         override_keymaps = true,
-        max_length = 30,
-        scroll_limit = 30
+        max_length = 100,
+        scroll_limit = -1
       })
     end
 
