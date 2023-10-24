@@ -12,4 +12,4 @@ lvim.keys.normal_mode["<C-k>"] = ":HopWord<CR>"
 -- Настройка ремапа в режиме визуального выбора
 lvim.keys.visual_mode["<leader>p"] = "\"_dP"
 
-vim.api.nvim_set_keymap("i", "<C-s>", "copilot#Accept('<CR>')", { silent = true, expr = true, script = true })
+vim.api.nvim_set_keymap("i", "<C-f>", "copilot#Accept('<CR>')", { silent = true, expr = true, script = true })
