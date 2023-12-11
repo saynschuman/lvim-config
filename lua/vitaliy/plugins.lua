@@ -47,5 +47,6 @@ return {
     after = {"copilot.lua"},
     config = function() require("copilot_cmp").setup() end
   }, {"jparise/vim-graphql"},
-  {"briones-gabriel/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim"}
+  {"briones-gabriel/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim"},
+  {"nvim-treesitter/playground", event = "Bufread"}
 }
