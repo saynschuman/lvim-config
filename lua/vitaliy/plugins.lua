@@ -48,9 +48,9 @@ return {
     config = function() require("copilot_cmp").setup() end
   }, {"jparise/vim-graphql"},
   {"briones-gabriel/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim"},
-  {"nvim-treesitter/playground", event = "Bufread"},
+  {"nvim-treesitter/playground", event = "Bufread"}
 
-  require('nvim-web-devicons').setup {
-    override = {vue = {icon = "v", color = "#42b883", name = "Vue"}}
-  }
+  -- require('nvim-web-devicons').setup {
+  --   override = {vue = {icon = "v", color = "#42b883", name = "Vue"}}
+  -- }
 }

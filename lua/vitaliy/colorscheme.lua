@@ -28,7 +28,11 @@ require("catppuccin").setup({
     operators = {}
   },
   color_overrides = {},
-  highlight_overrides = {},
+  highlight_overrides = {
+    -- all = function(colors)
+    --   return {["@comment"] = {fg = "#999999", style = {"italic"}}}
+    -- end
+  },
   integrations = {
     cmp = true,
     gitsigns = true,
