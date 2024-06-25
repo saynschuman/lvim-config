@@ -15,3 +15,5 @@ lvim.builtin.telescope.defaults.mappings = {
     ["<C-k>"] = actions.move_selection_previous
   }
 }
+
+lvim.builtin.telescope.defaults.path_display = { "absolute" }
