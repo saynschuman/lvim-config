@@ -16,4 +16,22 @@ lvim.builtin.telescope.defaults.mappings = {
   }
 }
 
-lvim.builtin.telescope.defaults.path_display = { "absolute" }
+lvim.builtin.telescope.defaults.path_display = {"absolute"}
+
+lvim.builtin.telescope.pickers.find_files = {
+    layout_config = { height = 0.99, width = 0.99, preview_cutoff = 120, preview_width = 0.6, prompt_position = "top" },
+    layout_strategy = "horizontal"
+}
+
+lvim.builtin.telescope.pickers.live_grep = {
+    layout_config = { height = 0.99, width = 0.99, preview_cutoff = 120, preview_width = 0.6, prompt_position = "top" },
+    layout_strategy = "horizontal"
+}
+
+lvim.builtin.telescope.pickers.git_status = {
+    layout_config = { height = 0.99, width = 0.99, preview_cutoff = 120, preview_width = 0.6, prompt_position = "top" },
+    layout_strategy = "horizontal"
+}
+
+
+
