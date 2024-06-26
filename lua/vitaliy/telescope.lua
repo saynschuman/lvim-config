@@ -18,7 +18,7 @@ lvim.builtin.telescope.defaults.mappings = {
 
 lvim.builtin.telescope.defaults.path_display = {"absolute"}
 
-lvim.builtin.telescope.pickers.find_files = {
+local common_layout_config = {
   layout_config = {
     height = 0.99,
     width = 0.99,
@@ -29,24 +29,12 @@ lvim.builtin.telescope.pickers.find_files = {
   layout_strategy = "horizontal"
 }
 
-lvim.builtin.telescope.pickers.live_grep = {
-  layout_config = {
-    height = 0.99,
-    width = 0.99,
-    preview_cutoff = 120,
-    preview_width = 0.6,
-    prompt_position = "top"
-  },
-  layout_strategy = "horizontal"
-}
+-- Apply common layout config and specific path_display to each picker
+lvim.builtin.telescope.pickers.find_files = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
+lvim.builtin.telescope.pickers.live_grep = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
+lvim.builtin.telescope.pickers.git_status = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
+lvim.builtin.telescope.pickers.grep_string = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
+lvim.builtin.telescope.pickers.buffers = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
+lvim.builtin.telescope.pickers.help_tags = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
+lvim.builtin.telescope.pickers.oldfiles = vim.tbl_extend("force", common_layout_config, {path_display = {"smart"}})
 
-lvim.builtin.telescope.pickers.git_status = {
-  layout_config = {
-    height = 0.99,
-    width = 0.99,
-    preview_cutoff = 120,
-    preview_width = 0.6,
-    prompt_position = "top"
-  },
-  layout_strategy = "horizontal"
-}
