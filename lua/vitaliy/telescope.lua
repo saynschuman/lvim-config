@@ -32,7 +32,7 @@ local common_layout_config = {
 -- Apply common layout config and specific path_display to each picker
 lvim.builtin.telescope.pickers.find_files = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
 lvim.builtin.telescope.pickers.live_grep = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
-lvim.builtin.telescope.pickers.git_status = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
+lvim.builtin.telescope.pickers.git_status = vim.tbl_extend("force", common_layout_config, {path_display = {"smart"}})
 lvim.builtin.telescope.pickers.grep_string = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
 lvim.builtin.telescope.pickers.buffers = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
 lvim.builtin.telescope.pickers.help_tags = vim.tbl_extend("force", common_layout_config, {path_display = {"absolute"}})
