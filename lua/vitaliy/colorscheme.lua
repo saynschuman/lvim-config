@@ -1,4 +1,4 @@
-lvim.colorscheme = "catppuccin"
+lvim.colorscheme = "darcula-solid"
 
 require("catppuccin").setup({
   flavour = "mocha", -- latte, frappe, macchiato, mocha
