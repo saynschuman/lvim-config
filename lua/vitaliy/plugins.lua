@@ -71,15 +71,12 @@ return {
       })
     end
   },
+  {"KabbAmine/vCoolor.vim",
+    cmd = {"VCoolor"}
+  },
   {"uga-rosa/ccc.nvim",
     config = function()
-      require("ccc").setup({
-        -- Автоматическое включение подсветки для всех поддерживаемых файлов
-        highlighter = {
-          auto_enable = true,
-          lsp = true,
-        },
-      })
+      require("ccc").setup({})
     end
   }
 }

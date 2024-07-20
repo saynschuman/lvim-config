@@ -9,7 +9,7 @@ lvim.keys.normal_mode["<C-[>"] = ":CocList diagnostics<CR>"
 lvim.keys.normal_mode["<C-a>"] = ":CocCommand eslint.executeAutofix<CR>"
 lvim.keys.normal_mode["<C-k>"] = ":HopWord<CR>"
 -- lvim.keys.normal_mode["<C-s>"] = "copilot#Accept<CR>"
-lvim.keys.normal_mode["<C-s>"] = ":CccPick<cr>"
+lvim.keys.normal_mode["<C-s>"] = ":VCoolor<cr>"
 -- lvim.keys.normal_mode["<leader>r"] = ":CccConvert<cr>"
 lvim.keys.normal_mode["<C-t>"] = ":CccHighlighterToggle<cr>"
 
