@@ -16,6 +16,7 @@ return {
     config = require("vitaliy.neo-tree")
   },
   {"catppuccin/nvim", name = "catppuccin"},
+  {"mg979/vim-visual-multi", name = "multi"},
   {
     "tpope/vim-fugitive",
     cmd = {
