@@ -63,15 +63,15 @@ return {
   {"briones-gabriel/darcula-solid.nvim", dependencies = "rktjmp/lush.nvim"},
   {"nvim-treesitter/playground", event = "Bufread"},
   {"folke/tokyonight.nvim", lazy = false, priority = 1000, opts = {}},
-  {"norcalli/nvim-colorizer.lua",
-    config = function()
-      require'colorizer'.setup({
-        '*'; -- подсвечивать цвета в любых файлах
-        css = { rgb_fn = true; }; -- включить поддержку CSS функций
-        html = { names = false; } -- отключить поддержку имен цветов
-      })
-    end
-  },
+  -- {"norcalli/nvim-colorizer.lua",
+  --   config = function()
+  --     require'colorizer'.setup({
+  --       '*'; -- подсвечивать цвета в любых файлах
+  --       css = { rgb_fn = true; }; -- включить поддержку CSS функций
+  --       html = { names = false; } -- отключить поддержку имен цветов
+  --     })
+  --   end
+  -- },
   {"KabbAmine/vCoolor.vim",
     cmd = {"VCoolor"}
   },
